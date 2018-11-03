@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,8 +40,30 @@ Route::get('/reportegrupos','grupos@reportegrupos');
 
 
 //CALIFICACIONES
-Route::get('/altacalificaciones','calificaciones@altacalificaciones');
+Route::get('/altacalificaciones','Calificacion@altacalificaciones');
 
-Route::POST('/guardacalificaciones','calificaciones@guardacalificaciones')->name('guardacalificaciones');
+Route::POST('/guardacalificaciones','Calificacion@guardacalificaciones')->name('guardacalificaciones');
 
-Route::get('/reportecalificaciones','calificaciones@reportecalificaciones');
+Route::get('/reportecalificaciones','Calificacion@reportecalificaciones');
+
+Route::get('/altausuario','usuario@altausuario'); // alta de usuarios
+Route::POST('/guardausuario','usuario@guardausuario')->name('guardausuario'); //recibe los valores del formulario
+Route::get('/reporteusuarios','usuario@reporteusuarios');
+
+Route::get('/altauniforme','Uniforme@altauniforme');//alta de uniformes
+Route::POST('/guardauniforme','uniforme@guardauniforme')->name('guardauniforme');
+Route::get('/reporteuniformes','uniforme@reporteuniformes');
+
+Route::get('/altamateria','materia@altamateria');//alta de materias
+Route::POST('/guardamateria','materia@guardamateria')->name('guardamateria');
+Route::get('/reportematerias','materia@reportematerias');
+
+Route::get('/altapago','pago@altapagos');//alta de materias
+Route::POST('/guardapago','pago@guardapago')->name('guardapago');
+Route::get('/reportepago','pago@reportepagos');
+
+Route::get('/altaciclo','cicloescolar@altaciclos');//alta de materias
+Route::POST('/guardaciclos','cicloescolar@guardaciclos')->name('guardaciclos');
+Route::get('/reporteciclo','cicloescolar@reporteciclos');
+
+
